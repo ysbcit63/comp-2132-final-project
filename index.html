@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <script src="scripts/jquery-3.4.1.min.js" defer="defer"></script>
+    <script src="scripts/game.js" defer="defer"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Dice Game</h1>
+        </header>
+        <main>            
+            <p></p>
+            <section id="pop-up">
+                <h2>Rules</h2>
+                <button id="btn-close">&#10005;</button>
+                <p>Rules 1:</p>
+                <p>Rules will be in this pop up.</p>
+                
+            </section>
+            <div id="container">
+
+                <button id="btn-roll">Roll Dice</button>
+
+                <div id="player-info">
+                    <h2>Player</h2>
+
+                    <p id="player-num-01">player number 01</p>
+                    <p id="player-num-02">player number 02</p>
+                    <p id="player-current-score">current score</p>
+                    <p id="player-total-score">total score</p>
+
+                </div>
+
+                <div id="computer-info">
+                    <h2>Computer</h2>
+
+                    <p id="cpt-num-01">player number 01</p>
+                    <p id="cpt-num-02">player number 02</p>
+                    <p id="cpt-current-score">current score</p>
+                    <p id="cpt-total-score">total score</p>
+
+                </div>
+ 
+                
+            </div>
+        </main>     
+        <footer>
+            COMP 2132
+        </footer>
+    </div>
+
+
+</body>
+</html>
