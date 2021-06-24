@@ -1,223 +1,274 @@
-@charset "utf-8";
-
-/* Resets */
-
-/* Paul Irish - Box Sizing Reset 
-   - https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
 */
-/* apply a natural box layout model to all elements, but allowing components to change */
-html {
-    box-sizing: border-box;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-#container{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content: center;
-}
-#container figure{
-    flex:0 0 100%;
-    text-align:center;
-}
-#container button{
-    flex:0 0 auto;
-}
-#pop-up{
-    width:300px;
-    padding:10px;
-    background-color: indianred;
-    color:white;
-    border:solid 1px black;
-    box-shadow:0px 0px 5px yellow, 5px 5px 5px black;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    /*
-    animate this opacity property
-    from 0 to 1    
-    */
-    opacity:0;
-    /* 
-    ensure pointer events will go 'through' this section tag 
-    since it might  otherwise overlap the buttons and make them unclickable
-    */
-    pointer-events: none;
-}
-#btn-close{
-    position:absolute;
-    top:10px;
-    right:10px;
-    font-weight: bold;
-    background-color: inherit;
-    color:inherit;
-    border:solid 1px white;
-    cursor:pointer;
-    /* ensure pointer events will apply to the button */
-    pointer-events: all;
-}
-img {
-    max-width: 100%;
-    height: auto;
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
 }
 
 body {
-    margin: 0;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: #353535;
+  line-height: 1;
 }
 
-header, footer, main, article, section {
-    display: block;
+ol, ul {
+  list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6 nav a {
-    font-family: Arial, Helvetica, sans-serif;
+blockquote, q {
+  quotes: none;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-    margin-top: 0;
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
 }
 
-p {
-    line-height: 1.6;
-    font-size: 1.15em;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-li {
-    font-size: 1.15em;
-    margin-bottom: 1em;
+/*end of of the great reset*/
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-code {
-    background-color: #eeeeee;
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
-.wrapper {
-    max-width: 90%;
-    margin: 0 auto;
-    background-color: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    
+body {
+  font-size: 16px;
 }
 
-.warning {
-    padding: 16px;
-    background-color: #fdb3b3;
+h1 {
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+  color: #ed7a09;
+  margin: 1em auto;
 }
 
-.warning p {
-    margin: 0;
-}
-
-.warning:not(.warning-no-script){
-    margin-bottom: 1em;
-}
-
-
-
-header {
-    background-color: #f7df1c;
-    padding: 20px;
-}
-
-header h1 {
-    margin: 0;
-    line-height: 1;
+h2 {
+  font-size: 2em;
 }
 
 main {
-    padding: 20px;
-    flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 700px;
 }
 
-form {
-    border: 1px solid #858585;
-    padding: 20px;
-    max-width: 360px;
-    margin-bottom: 30px;
+button {
+  font-size: 1.5em;
+  padding: 0.25em 1em;
+  width: 200px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: #ed7a09;
+  background-color: #fdfaeb;
+  border: 2px solid #354728;
 }
-
-.input-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-}
-
-.submit {
-    margin-bottom: 0;
-}
-
-.input-group label {
-    flex: 0 0 100px;
-    font-size: 1.15em;
-    margin-right: 10px;
-}
-
-.input-group input {
-    display: block;
-    flex: 1;
-    width: 100%;
-    padding: 4px;
-    font-size: 1.15em;
-}
-
-
 
 footer {
-    padding: 20px;
-    border-top: 1px dotted #858585;
+  padding: 2em;
 }
 
-footer p {
-    line-height: 1;
-    margin: 0;
+#wrapper {
+  width: 1024px;
+  margin: auto;
+  padding: 0 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fdfaeb;
 }
 
-/* Utility Classes */
-
-.mtb20 {
-    margin-top: 20px;
-    margin-bottom: 20px;
+img {
+  display: inline;
+  width: 64px;
 }
 
-a{
-	font-weight:bold;
-	color:#b78731;
+#player-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 3px dashed #354728;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2em 0;
+  background-color: #75ae88;
 }
-a:hover{
-	color:orange;
-	text-decoration:none;
+
+#player-info h2 {
+  font-size: 2em;
+  width: 200px;
+  padding: 1em;
+  font-weight: bold;
 }
-pre{
-	border:solid 1px black;
-	padding:5px;
-	border:solid 1px black;
-}.error:before{
-	/* 
-	show a big red 'X' 
-	the universal symbol of wrongness!
-	*/
-	font-size:1.25em;
-	font-weight:bold;
-	color:red;
-	text-shadow:0px 0px 1px black;
-	content: "\2716" " ";	
+
+#computer-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 2px solid #354728;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2em 0;
+  background-color: #f3c933;
 }
-.correct:before{
-	/* 
-	show a big green check mark 
-	*/
-	font-size:1.25em;
-	font-weight:bold;
-	color:green;
-	text-shadow:0px 0px 1px lightgreen;
-	content: "\2714" " ";	
+
+#computer-info h2 {
+  font-size: 2em;
+  width: 200px;
+  padding: 1em;
+  font-weight: bold;
 }
-#error-messages{
-    background-color: #fdb3b3;
+
+.dice-field {
+  font-size: 4em;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.score-field {
+  width: 100px;
+  text-align: center;
+}
+
+.score-field h3 {
+  font-size: 1.5em;
+  padding: 16px;
+}
+
+.score-field p {
+  font-size: 2.5em;
+  padding-bottom: 16px;
+}
+
+.button-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#rules-popup {
+  width: 600px;
+  height: 600px;
+  padding: 32px;
+  background-color: #d0d8e9;
+  border: solid 3px #354728;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /*
+    animate this opacity property
+    from 0 to 1    
+    */
+  opacity: 0;
+  /* 
+    ensure pointer events will go 'through' this section tag 
+    since it might  otherwise overlap the buttons and make them unclickable
+    */
+  pointer-events: none;
+}
+
+#rules-popup h2 {
+  font-size: 2em;
+  font-weight: bold;
+  padding-bottom: 1em;
+}
+
+#rules-popup p {
+  font-size: 1.5em;
+  line-height: 1.25em;
+  padding-bottom: 1em;
+}
+
+#btn-close {
+  /* ensure pointer events will apply to the button */
+  pointer-events: all;
+}
+
+#result-popup {
+  display: none;
+  text-align: center;
+  width: 600px;
+  height: 400px;
+  padding: 32px;
+  background-color: #d0d8e9;
+  border: solid 3px #354728;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /* 
+    ensure pointer events will go 'through' this section tag 
+    since it might  otherwise overlap the buttons and make them unclickable
+    */
+  pointer-events: none;
+}
+
+#result-popup h2 {
+  font-size: 2em;
+  font-weight: bold;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+#result-popup p {
+  font-size: 1.5em;
+  line-height: 1.25em;
+  padding-bottom: 1em;
+}
+
+#result-reset {
+  /* ensure pointer events will apply to the button */
+  pointer-events: all;
 }

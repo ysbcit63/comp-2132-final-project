@@ -4,55 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dice Game</title>
+    <title>The Dice Game</title>
     <link rel="stylesheet" href="styles/styles.css">
 
     <script src="scripts/jquery-3.4.1.min.js" defer="defer"></script>
     <script src="scripts/game.js" defer="defer"></script>
 </head>
+
 <body>
-    <div class="wrapper">
+    <div id="wrapper">
         <header>
-            <h1>Dice Game</h1>
+            <h1>The Dice Game <img src="images/dice-solid.svg"></h1>
         </header>
+
+
         <main>            
-            <p></p>
-            <section id="pop-up">
-                <h2>Rules</h2>
-                <button id="btn-close">&#10005;</button>
-                <p>Rules 1:</p>
-                <p>Rules will be in this pop up.</p>
+
+            <section >               
+                <button id="btn-rules">Rules</button>
+
+                <div id="rules-popup">
+                    <h2>Rules</h2>
+
+                    <p>1. If any of the players two dice comes up as a 1 then the score for that round for the player is 0. eg: if the player rolls a 6 and 1, they get a score of 0.</p>
+
+                    <p>2. If the player rolls a pair of the same numbers then the players score is the total of the two dice times 2. eg: if he player rolls 5 and 5, they get a score of (5+5)*2=20.</p>
+
+                    <p>3. If the player rolls any other combination of dice other than the ones mentioned above then the players score is the total value of the two dice, eg: player rolls a 3 and 2, player gets a score of 3+2=5.</p>
+
+                    <button id="btn-close">Close</button>
+                </div>
                 
             </section>
-            <div id="container">
 
-                <button id="btn-roll">Roll Dice</button>
+
+            <section id="container">
 
                 <div id="player-info">
                     <h2>Player</h2>
 
-                    <p id="player-num-01">player number 01</p>
-                    <p id="player-num-02">player number 02</p>
-                    <p id="player-current-score">current score</p>
-                    <p id="player-total-score">total score</p>
+                    <div class="dice-field">
+                        
+                        <img src="images/dice-one-solid.svg" id="player-num-01">
+                        <img src="images/dice-six-solid.svg" id="player-num-02">
+                    </div>
 
+                    <div class="score-field">
+                        <h3>Current Score</h3>
+                        <p id="player-current-score">0</p>
+                    </div>
+
+                    <div class="score-field">
+                        <h3>Total Score</h3>
+                        <p id="player-total-score">0</p>
+                    </div>
+                    
                 </div>
 
                 <div id="computer-info">
                     <h2>Computer</h2>
 
-                    <p id="cpt-num-01">player number 01</p>
-                    <p id="cpt-num-02">player number 02</p>
-                    <p id="cpt-current-score">current score</p>
-                    <p id="cpt-total-score">total score</p>
+                    <div class="dice-field">
+                        <img src="images/dice-six-solid.svg" id="cpt-num-01">
+                        <img src="images/dice-one-solid.svg" id="cpt-num-02">
+                    </div>
+                    
+                    <div class="score-field">
+                        <h3>Current Score</h3>
+                        <p id="cpt-current-score">0</p>
+                    </div>    
+
+                    <div class="score-field">
+                        <h3>Total Score</h3>
+                        <p id="cpt-total-score">0</p>
+                    </div>
 
                 </div>
- 
-                
-            </div>
-        </main>     
+
+                <div class="button-field">
+                    <button id="btn-roll">Roll Dice</button>
+                    <button id="new-game" class="reset">New Game</button>
+                </div>
+
+            </section>
+
+
+            <section id="result-popup">
+                <h2>Result</h2>
+                <p id="result">The Winner is ???</p>
+
+                <button id="result-reset">New Game</button>
+
+            </section>
+        </main>
+
         <footer>
-            COMP 2132
+            <p>COMP 2132 Final Project</p>
+            <p>Credit: all SVG files from <a target="_blank" href="https://fontawesome.com/">Font Awesome</a></p>
+
         </footer>
     </div>
 

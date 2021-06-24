@@ -1,0 +1,226 @@
+//import resets
+@import "reset.scss";
+@import "box_reset.scss";
+
+
+//colour scheme from #034
+
+$c1: rgb(253, 250, 235);
+$c2: rgb(234, 226, 86);
+$c3: rgb(185, 201, 87);
+$c4: rgb(117, 174, 136);
+$c5: rgb(243, 201, 51);
+$c6: rgb(237, 122, 9);
+$c7: rgb(53, 71, 40);
+$c8: rgb(156, 138, 150);
+$c9: rgb(208, 216, 233);
+
+
+@mixin button-style($color, $bg-color, $border-color){
+    font-size: 1.5em;  
+    padding: 0.25em 1em;
+    width: 200px;
+    cursor: pointer;
+    border-radius: 10px;
+
+    color: $color;
+    background-color: $bg-color;
+    border:2px solid $border-color;    
+}
+
+
+body{
+    font-size: 16px;
+}
+
+
+h1{
+    font-size: 4em;
+    font-weight: bold;
+    text-align: center;
+    color: $c6;
+
+    margin: 1em auto;
+}
+
+h2{
+    font-size: 2em;
+}
+
+main{
+    flex: 1;
+    width: 700px;
+}
+
+button{
+    @include button-style($c6, $c1, $c7);
+}
+
+footer{
+    padding: 2em;
+}
+
+#wrapper{
+
+    width: 1024px;
+    margin: auto;
+    padding: 0 1em;
+
+    display: flex;
+    flex-direction: column;
+    min-height:100vh;
+
+    align-items: center;
+
+    background-color: $c1;
+}
+
+img{
+    display: inline;
+    width: 64px;
+}
+
+#player-info{
+    display: flex;
+    border: 3px dashed $c7;
+    align-items: center;
+    margin: 2em 0;
+    background-color: $c4;
+
+    h2{
+        font-size: 2em;
+        width: 200px;
+        padding: 1em;
+        font-weight: bold;
+    }
+
+}
+
+#computer-info{
+    display: flex;
+    border: 2px solid $c7;
+    align-items: center;
+    margin: 2em 0;
+    background-color: $c5;
+
+    h2{
+        font-size: 2em;
+        width: 200px;
+        padding: 1em;
+        font-weight: bold;
+    }
+
+}
+
+.dice-field{
+    font-size: 4em;
+    width: 300px;
+
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.score-field{
+    width: 100px;
+    text-align: center;
+    
+
+    h3{
+        font-size: 1.5em;
+        padding: 16px;
+    }
+
+    p{
+        font-size: 2.5em;
+        padding-bottom: 16px;
+    }
+
+}
+
+.button-field{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#rules-popup{
+    width:600px;
+    height: 600px;
+    padding:32px;
+    background-color: $c9;
+    border:solid 3px $c7;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    /*
+    animate this opacity property
+    from 0 to 1    
+    */
+    opacity:0;
+    /* 
+    ensure pointer events will go 'through' this section tag 
+    since it might  otherwise overlap the buttons and make them unclickable
+    */
+    pointer-events: none;
+
+    h2{
+        font-size: 2em;
+        font-weight: bold;
+        padding-bottom: 1em;
+    }
+
+    p{
+        font-size: 1.5em;
+        line-height: 1.25em;
+        padding-bottom: 1em;
+    }
+
+}
+
+#btn-close{
+    /* ensure pointer events will apply to the button */
+    pointer-events: all;
+}
+
+#result-popup{
+
+    display: none;
+    text-align: center;
+
+    width:600px;
+    height: 400px;
+    padding:32px;
+    background-color: $c9;
+    border:solid 3px $c7;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+
+    /* 
+    ensure pointer events will go 'through' this section tag 
+    since it might  otherwise overlap the buttons and make them unclickable
+    */
+    pointer-events: none;
+
+    h2{
+        font-size: 2em;
+        font-weight: bold;
+        padding-top: 2em;
+        padding-bottom: 1em;
+    }
+
+    p{
+        font-size: 1.5em;
+        line-height: 1.25em;
+        padding-bottom: 1em;
+    }
+
+}
+
+#result-reset{
+    /* ensure pointer events will apply to the button */
+    pointer-events: all;
+}
